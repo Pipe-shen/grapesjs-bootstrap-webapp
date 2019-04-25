@@ -37,7 +37,7 @@ export default function (editor, opt = {}) {
       flex-grow: 1;
       flex-basis: 100%;
     }` : `
-    .${clsCell} {
+    .${clsCell} { 
       width: 8%;
       display: table-cell;
       height: 75px;
@@ -108,8 +108,8 @@ export default function (editor, opt = {}) {
     label: c.labelColumn1,
     category: c.category,
     attributes: {class:'gjs-fonts gjs-f-b1'},
-    content: `<div ${attrsRow}>
-        <div ${attrsCell}></div>
+    content: `<div class="row" ${attrsRow}>
+        <div class="col-xs-12" ${attrsCell}></div>
       </div>
       ${ basicStyle ?
       `<style>

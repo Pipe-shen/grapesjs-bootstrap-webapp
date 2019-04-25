@@ -3,10 +3,11 @@ import grapesjs from 'grapesjs'
 // import bootstrapSass from './style/bootstrap-custom.scss'
 import commands from './commands'
 import panels from './panels'
+import blocks from './blocks/index'
 
 export default grapesjs.plugins.add('grapesjs-bootstrap-webapp', (editor, opts = {}) => {
   const config = {
-    blocks: ['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map'],
+    blocks: ['column1', 'column2'/*, 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map'*/],
     flexGrid: 0,
     stylePrefix: 'gjs-',
     addBasicStyle: true,
@@ -23,17 +24,7 @@ export default grapesjs.plugins.add('grapesjs-bootstrap-webapp', (editor, opts =
     ...opts
   };
 
-  editor.BlockManager.add('quote', {
-    label: 'Quote',
-    category: 'Basic',
-    attributes: { class: 'fa fa-quote-right' },
-    content: `<blockquote class="quote">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore ipsum dolor sit
-      </blockquote>`
-  })
-  // Add blocks
-  /*const loadBlocks = require('./blocks');
-  loadBlocks.default(editor, config);*/
   commands(editor, config)
   panels(editor, config)
+  blocks(editor, config)
 })

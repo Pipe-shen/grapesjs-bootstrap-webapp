@@ -6,8 +6,26 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>grapes-js</title>
+<!--  <link href="dist/grapesjs-bootstrap-webapp.min.css" rel="stylesheet">-->
+  <link rel="stylesheet" href="node_modules/grapesjs/dist/css/grapes.min.css" >
+  <script src="node_modules/grapesjs/dist/grapes.min.js"></script>
+  <script src="dist/grapesjs-bootstrap-webapp.min.js"></script>
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
-grapes-js
+<div id="gjs">1</div>
+<script type="text/javascript">
+  var editor = grapesjs.init({
+    container: '#gjs',
+    plugins: ['gjs-bootstrap-webpage'],
+    pluginsOpts: {}
+  });
+</script>
 </body>
 </html>

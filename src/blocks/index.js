@@ -1,43 +1,17 @@
 import Text from './text'
+import Column from './column'
+import Container from './container'
+import Table from './table'
+import Form from './form'
+import Button from './button'
+
 export default (editor, opts) => {
-  let bm = editor.BlockManager;
-  let blocks = opts.blocks;
 
-  // const toAdd = name => blocks.indexOf(name) >= 0;
-
-  const styleCell = `
-    .cell {
-      min-height: 75px;
-    }`
-
-  bm.add('column1', {
-    label: 'column1',
-    category: 'Basic',
-    attributes: {class:'gjs-fonts gjs-f-b1'},
-    content: `<div class="row"><div class="col-xs-12">column1</div></div>`
-  });
-
-  bm.add('column2', {
-    label: 'column2',
-    category: 'Basic',
-    attributes: {class:'gjs-fonts gjs-f-b2'},
-    content: `<div class="row"><div class="col-xs-6">column2</div><div class="col-xs-6">column2</div></div>`
-  });
-
-  bm.add('column3', {
-    label: 'column3',
-    category: 'Basic',
-    attributes: {class:'gjs-fonts gjs-f-b3'},
-    content: `<div class="row">
-                <div class="col-xs-4 cell"></div>
-                <div class="col-xs-4 cell"></div>
-                <div class="col-xs-4 cell"></div>
-              </div>
-              <style>
-                ${styleCell}
-              </style>`
-  });
-
+  Container(editor, opts)
+  Column(editor, opts)
   Text(editor, opts)
+  Table(editor, opts)
+  Form(editor, opts)
+  Button(editor, opts)
 
 }
